@@ -4,7 +4,7 @@ uvicorn[standard]==0.34.0
 pydantic==2.10.4
 pypdf==5.1.0
 numpy==2.2.1
-openai==1.59.6
+openai==1.99.9
 python-dotenv==1.0.1
 
 # Dependances de developpement / tests.
