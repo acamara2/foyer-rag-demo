@@ -126,7 +126,11 @@ def _business_guidance(answer: dict, trace: dict) -> tuple[str, str]:
 
 with st.sidebar:
     st.header("Corpus documentaire")
-    st.caption(f"Backend : {BACKEND_URL}")
+    st.caption(
+        "Donnees source : "
+        "[backend/data sur GitHub]"
+        "(https://github.com/acamara2/foyer-rag-demo/tree/main/backend/data)"
+    )
 
     docs_payload = call_documents()
     if docs_payload is None:
