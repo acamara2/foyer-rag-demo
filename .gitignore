@@ -29,5 +29,5 @@ Thumbs.db
 # Artefacts residuels d'un environnement de construction sandbox (bac a
 # sable sans acces reseau, filesystem monte ne supportant pas unlink()) -
 # ne font pas partie du livrable.
-.git_broken/
+.git_broken*/
 _delete_test*.txt
