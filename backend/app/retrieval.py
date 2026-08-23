@@ -1,7 +1,7 @@
 """
 Brique 3 - Retrieval (ancrage de la question dans le corpus).
 
-Point cle demande par le recruteur : ne pas s'arreter a une seule similarite
+Point cle : ne pas s'arreter a une seule similarite
 cosinus. On combine ici TROIS signaux explicites, calcules independamment et
 combines de facon deterministe (somme ponderee) :
 

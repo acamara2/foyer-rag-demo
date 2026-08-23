@@ -1,8 +1,8 @@
 """
 Fine wrapper autour de l'API OpenAI, isole dans un seul fichier.
 
-Objectif explicite du recruteur : ne pas cacher les appels LLM derriere un
-framework (pas de LangChain/LlamaIndex). Chaque appel au modele est ecrit a
+Choix assume : ne pas cacher les appels LLM derriere un framework (pas de
+LangChain/LlamaIndex). Chaque appel au modele est ecrit a
 la main ici, via `client.responses.parse(..., text_format=<PydanticModel>)`
 (API "Structured Outputs" du SDK OpenAI officiel) qui force contractuellement
 le modele a repondre selon un schema Pydantic donne.

@@ -1,8 +1,7 @@
 # Chatbot documentaire - demo (Foyer)
 
 Demo technique d'un "chatbot documentaire" (question/reponse sur des
-contrats d'assurance PDF), construite pour illustrer une candidature
-AI Engineer / Senior Data Scientist. Elle repond au cas d'usage typique
+contrats d'assurance PDF). Elle repond au cas d'usage typique
 d'un assureur : un conseiller ou un assure pose une question en langage
 naturel sur des conditions generales, et le systeme doit soit repondre
 avec une preuve citee (page, extrait verbatim), soit s'abstenir
@@ -207,7 +206,7 @@ logique du script d'evaluation en isolation.
 
 ## Deployer sur Render
 
-1. Pousser ce depot sur GitHub (le candidat connecte son propre compte -
+1. Pousser ce depot sur GitHub (via son propre compte -
    aucun remote n'est configure par cette demo).
 2. Sur [render.com](https://render.com), cliquer **New +** -> **Blueprint**,
    selectionner le depot GitHub : Render lit `render.yaml` a la racine et
@@ -315,4 +314,4 @@ avec `buildCommand: pip install -r frontend/requirements.txt` et
 
 ## Contact
 
-Candidature AI Engineer / Senior Data Scientist - Groupe Foyer (Luxembourg).
+Ababacar Camara, ababacar.camara@outlook.fr
