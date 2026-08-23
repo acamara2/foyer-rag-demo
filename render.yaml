@@ -1,0 +1,40 @@
+# Blueprint Render (https://render.com/docs/blueprint-spec).
+#
+# Definit les 2 services de la demo :
+# 1. foyer-rag-backend  - API FastAPI (Docker), le "cerveau" de la pipeline.
+# 2. foyer-rag-frontend - interface Streamlit (env Python natif), qui
+#    appelle le backend via BACKEND_URL.
+#
+# Deploiement : "New +" -> "Blueprint" sur render.com, pointer sur ce depot
+# GitHub. Render cree les 2 services automatiquement. Il ne reste plus qu'a
+# renseigner OPENAI_API_KEY (secret, sync: false ci-dessous) dans le
+# dashboard du service backend - voir README, section "Deployer sur Render".
+services:
+  - type: web
+    name: foyer-rag-backend
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: .
+    plan: free
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        value: gpt-4o-mini
+        sync: false
+    healthCheckPath: /health
+
+  - type: web
+    name: foyer-rag-frontend
+    runtime: python
+    plan: free
+    buildCommand: pip install -r frontend/requirements.txt
+    startCommand: streamlit run frontend/streamlit_app.py --server.port $PORT --server.address 0.0.0.0
+    envVars:
+      # Render ne propage pas fiablement une URL https complete entre deux
+      # services "web" independants via fromService (seulement host/port).
+      # A renseigner manuellement dans le dashboard apres le premier deploy
+      # du backend, avec l'URL affichee par Render (ex:
+      # https://foyer-rag-backend.onrender.com) - voir README.
+      - key: BACKEND_URL
+        value: https://foyer-rag-backend.onrender.com

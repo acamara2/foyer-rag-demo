@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Secrets / environnement local
+.env
+.env.*
+!.env.example
+
+# Sorties d'evaluation locales (regenerees par run_eval.py)
+backend/data/eval_results.json
+
+# OS / editeurs
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Artefacts residuels d'un environnement de construction sandbox (bac a
+# sable sans acces reseau, filesystem monte ne supportant pas unlink()) -
+# ne font pas partie du livrable.
+.git_broken/
+_delete_test*.txt

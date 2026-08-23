@@ -1,0 +1,155 @@
+[
+  {
+    "id": "q01",
+    "question": "Quel est le plafond de la garantie Defense penale et recours en assurance auto ?",
+    "expected_doc_id": "assurance_auto",
+    "expected_keywords": ["10 000", "defense penale"],
+    "should_abstain": false,
+    "is_edge_case": false
+  },
+  {
+    "id": "q02",
+    "question": "Quel est le delai pour declarer un vol de vehicule en assurance auto ?",
+    "expected_doc_id": "assurance_auto",
+    "expected_keywords": ["deux jours"],
+    "should_abstain": false,
+    "is_edge_case": false
+  },
+  {
+    "id": "q03",
+    "question": "Quelle est la franchise de la garantie Bris de glace en assurance auto ?",
+    "expected_doc_id": "assurance_auto",
+    "expected_keywords": ["75"],
+    "should_abstain": false,
+    "is_edge_case": false
+  },
+  {
+    "id": "q04",
+    "question": "Quel est le plafond de la garantie Degats des eaux en assurance habitation ?",
+    "expected_doc_id": "assurance_habitation",
+    "expected_keywords": ["150 000"],
+    "should_abstain": false,
+    "is_edge_case": false
+  },
+  {
+    "id": "q05",
+    "question": "Combien de temps le souscripteur doit-il attendre avant de pouvoir demander un rachat de son assurance vie ?",
+    "expected_doc_id": "assurance_vie",
+    "expected_keywords": ["deux ans"],
+    "should_abstain": false,
+    "is_edge_case": false
+  },
+  {
+    "id": "q06",
+    "question": "Quel est le montant du capital deces garanti par le contrat d'assurance vie ?",
+    "expected_doc_id": "assurance_vie",
+    "expected_keywords": ["100 000"],
+    "should_abstain": false,
+    "is_edge_case": false
+  },
+  {
+    "id": "q07",
+    "question": "Dans quel delai les demandes de remboursement doivent-elles etre transmises en assurance sante ?",
+    "expected_doc_id": "assurance_sante",
+    "expected_keywords": ["deux ans"],
+    "should_abstain": false,
+    "is_edge_case": false
+  },
+  {
+    "id": "q08",
+    "question": "Le suicide du souscripteur est-il couvert par la garantie deces la premiere annee du contrat ?",
+    "expected_doc_id": "assurance_vie",
+    "expected_keywords": ["suicide", "premiere annee"],
+    "should_abstain": false,
+    "is_edge_case": false
+  },
+  {
+    "id": "q09",
+    "question": "Quelles sont les garanties incluses dans l'assurance auto ?",
+    "expected_doc_id": "assurance_auto",
+    "expected_keywords": ["responsabilite civile", "defense penale", "assistance"],
+    "should_abstain": false,
+    "is_edge_case": false,
+    "is_listing": true
+  },
+  {
+    "id": "q10",
+    "question": "Quelles sont toutes les exclusions de l'assurance automobile ?",
+    "expected_doc_id": "assurance_auto",
+    "expected_keywords": ["ivresse", "competitions sportives", "guerre"],
+    "should_abstain": false,
+    "is_edge_case": false,
+    "is_listing": true
+  },
+  {
+    "id": "q11",
+    "question": "Listez les garanties incluses dans l'assurance habitation.",
+    "expected_doc_id": "assurance_habitation",
+    "expected_keywords": ["incendie", "degats des eaux", "vol", "bris de glace"],
+    "should_abstain": false,
+    "is_edge_case": false,
+    "is_listing": true
+  },
+  {
+    "id": "q12",
+    "question": "Quel est le delai de carence pour l'assurance chien et chat ?",
+    "expected_doc_id": null,
+    "expected_keywords": [],
+    "should_abstain": true,
+    "is_edge_case": false,
+    "note": "Produit inexistant dans le corpus : abstention attendue, aucune ancre ne devrait depasser le seuil."
+  },
+  {
+    "id": "q13",
+    "question": "Quel est le taux de croissance du PIB mondial prevu pour 2027 ?",
+    "expected_doc_id": null,
+    "expected_keywords": [],
+    "should_abstain": true,
+    "is_edge_case": false,
+    "note": "Question hors-sujet, sans rapport avec le corpus documentaire (contrats d'assurance) : abstention attendue."
+  },
+  {
+    "id": "q14",
+    "question": "Quel est le plafond de garantie pour les catastrophes naturelles en assurance habitation ?",
+    "expected_doc_id": null,
+    "expected_keywords": [],
+    "should_abstain": true,
+    "is_edge_case": false,
+    "note": "Garantie non definie dans les documents generes (seules Incendie, Degats des eaux, Vol, Bris de glace existent) : abstention attendue plutot qu'une invention de chiffre."
+  },
+  {
+    "id": "q15",
+    "question": "Si un degat des eaux touche mon voisin, quelle garantie s'applique en plus des degats des eaux ?",
+    "expected_doc_id": "assurance_habitation",
+    "expected_keywords": ["responsabilite civile"],
+    "should_abstain": false,
+    "is_edge_case": true,
+    "note": "Cas limite documente : la clause pertinente est ecrite dans la section 'Degats des eaux' mais renvoie explicitement a la section 'Responsabilite civile' (chevauchement volontaire de deux sections). Best effort : on tolere que la reponse cite l'une des deux pages, voire les deux ; credit partiel si seule une des deux sections est citee."
+  },
+  {
+    "id": "q16",
+    "question": "Quelle est la difference de remboursement des consultations chez le medecin generaliste entre la Formule Essentielle et la Formule Confort en assurance sante ?",
+    "expected_doc_id": "assurance_sante",
+    "expected_keywords": ["80%", "100%"],
+    "should_abstain": false,
+    "is_edge_case": true,
+    "note": "Cas limite documente : la reponse provient d'un tableau comparatif deux-colonnes extrait en texte lineaire par page (ambiguite d'ordre de lecture ligne-a-ligne). Best effort : credit partiel si un seul des deux pourcentages est correctement associe a la bonne formule."
+  },
+  {
+    "id": "q17",
+    "question": "Quel organisme luxembourgeois controle le secteur de l'assurance selon le rapport de conjoncture ?",
+    "expected_doc_id": "rapport_sans_sommaire",
+    "expected_keywords": ["commissariat aux assurances", "caa"],
+    "should_abstain": false,
+    "is_edge_case": true,
+    "note": "Cible le document SANS sommaire exploitable (toc_degraded=True). Le retrieval doit s'appuyer uniquement sur le score mots-cles + embedding (toc_score neutralise a 0), avec low_confidence_anchor=True attendu si une ancre est tout de meme trouvee."
+  },
+  {
+    "id": "q18",
+    "question": "Quel est le montant de la franchise applicable a la garantie Vol et incendie en assurance auto ?",
+    "expected_doc_id": "assurance_auto",
+    "expected_keywords": ["300"],
+    "should_abstain": false,
+    "is_edge_case": false
+  }
+]

@@ -1,0 +1,16 @@
+# Dependances de production de l'API FastAPI (backend/app/).
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic==2.10.4
+pypdf==5.1.0
+numpy==2.2.1
+openai==1.59.6
+python-dotenv==1.0.1
+
+# Dependances de developpement / tests.
+pytest==8.3.4
+
+# Uniquement necessaire pour regenerer le corpus PDF synthetique
+# (backend/data/generate_synthetic_docs.py) - pas requis pour faire tourner
+# l'API elle-meme, les PDF generes sont deja commites dans le depot.
+reportlab==4.2.5
